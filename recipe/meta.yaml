@@ -1,5 +1,5 @@
 {% set name = "catppuccin-jupyterlab" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/catppuccin_jupyterlab-{{ version }}.tar.gz
-  sha256: 74c5c316db3a2c57680b5c4130bf41d7e42e2b5985779f8e925ce3ad2ad1588e
+  sha256: 49bbcdedfb54b33157c63964aee5aae2dec57cf720f3c3cc7ad5e5ba2568d720
 
 build:
   noarch: python
