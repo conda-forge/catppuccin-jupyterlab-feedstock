@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/catppuccin_jupyterlab-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/catppuccin_jupyterlab-{{ version }}.tar.gz
   sha256: 6bdb0129c220296b81b8ef82e29c61b8213c13a82a86849d8ded2b41f9a29024
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=1.5.0
     - jupyterlab >=3.0.0,<5
     - hatch-nodejs-version
     - pip
     - hatch-jupyter-builder >=0.5
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -37,6 +37,7 @@ test:
     - pip
     - jupyterlab
     - grep  # [not win]
+    - python {{ python_min }}
 
 about:
   summary: 📊 Soothing pastel theme for JupyterLab.
